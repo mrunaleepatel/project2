@@ -2,21 +2,30 @@
 
 require('dotenv').config();
 const express = require('express');
-const morgan = require('morgan');
+const WeatherRouter = require('./controllers/weather');
+const UserRouter = require('./controllers/user');
 const methodOverride = require('method-override');
-
 const app = express();
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
 // middleware
-
-app.use(morgan('dev'));
-app.use(methodOverride('_method'));
 app.use(express.static('public'));
+app.use(express.urlencoded());
+app.use(methodOverride('_method'));
+app.use(session({
+    secret: process.env.SECRET,
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+    saveUninitialized: true,
+    resave: false
+}));
 
-// routes
+app.use("/weather", WeatherRouter);
+app.use("/user", UserRouter);
+
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.render('index.ejs');
     })
 
 // listen
