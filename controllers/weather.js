@@ -15,7 +15,7 @@ router.use((req, res, next) => {
 // controllers
 router.get('/', async (req, res) => {
     const allOutdoorActivityWeather = await OutdoorActivityWeather.find({ username: req.session.username })
-    res.render('weather/index.ejs', { weather: allOutdoorActivityWeather, user: req.session.username }
+    res.render('location/index.ejs', { weather: allOutdoorActivityWeather, user: req.session.username }
     )
 })
 

@@ -20,7 +20,7 @@ app.use(session({
     resave: false
 }));
 
-app.use("/weather", WeatherRouter);
+app.use("/location", WeatherRouter);
 app.use("/user", UserRouter);
 
 
