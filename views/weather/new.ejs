@@ -9,14 +9,16 @@
 <body>
     <main>
         <div>
-            <form action="/location" method="post">
+            <form action="/weather" method="post">
                 <fieldset>
                     <legend>Create a new location</legend>
                     <label>Location: <input required type="text" name="name" placeholder="enter location"/></label>
                     <label>Activity: <input required type="text" name="name" placeholder="enter activity"/></label>
                     <label>Temperature: <input required type="number" name="number" placeholder="enter temperature"/></label>
                     <label>Wind Speed: <input required type="number" name="number" placeholder="enter wind speed"/></label>
-                    <label>Precipitation: <input required type="text" name="name" placeholder="enter precipitation"/></label>
+                    <label>Precipitation: <input required type="text" name="number" placeholder="enter precipitation"/></label>
+                    <label>To go: <input type="checkbox" name="toGo"/></label>
+                    <input type="submit" value="Create new location"/>
                 </fieldset>
             </form>
         </div>

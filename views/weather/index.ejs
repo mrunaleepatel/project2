@@ -10,10 +10,10 @@
     <main>
         <div>
             <p><%= user%></p>
-            <a href="/location/new">Create New location</a>
-            <% for (location of locations) { %>
+            <a href="/weather/new">Create New location</a>
+            <% for (weather of weathers) { %>
                 <article>
-                    <a href="/location/<%= location._id %>">
+                    <a href="/weather/<%= location._id %>">
                         <h2>
                             <%= location.name %>
                         </h2>

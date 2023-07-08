@@ -2,7 +2,7 @@
 
 require('dotenv').config();
 const express = require('express');
-const LocationRouter = require('./controllers/location.js');
+const WeatherRouter = require('./controllers/weather.js');
 const UserRouter = require('./controllers/user.js');
 const methodOverride = require('method-override');
 const app = express();
@@ -20,7 +20,7 @@ app.use(session({
     resave: false
 }));
 
-app.use("/location", LocationRouter);
+app.use("/weather", WeatherRouter);
 app.use("/user", UserRouter);
 
 

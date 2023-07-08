@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutdoorActivityWeather</title>
+</head>
+<body>
+    <main>
+        <div>
+            <article>
+                <h2><%= location.name%></h2>
+                <h3><%= activity.name%></h3>
+                <h3><%= temperature.number%></h3>
+                <h3><%= windSpeed.number%></h3>
+                <h3><%= precipitation.name%></h3>
+                <h3><%= toGo.boolean%></h3>
+                <a href="/weather/<%=animal._id %>/edit"><button>Edit</button></a>
+                <form action="/weather/<%=location._id %>?_method=DELETE" method="post">
+                    <input type="submit" value="delete"/>
+                </form>
+                <a href="/weather"><button>Back to main</button></a>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

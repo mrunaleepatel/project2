@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutdoorActivityWeather</title>
+</head>
+<body>
+    <main>
+        <div>
+            <form method="post" action="/weather/<%=weather._id%>?_method=put">
+                <fieldset>
+                    <legend>Create a new location</legend>
+                    <label>Location: <input required type="text" name="name" placeholder="enter location" value="<%=location.name%>"/></label>
+                    <label>Activity: <input required type="text" name="name" placeholder="enter activity" value="<%=activity.name%>"/></label>
+                    <label>Temperature: <input required type="number" name="number" placeholder="enter temperature" value="<%=temperature.number%>"/></label>
+                    <label>Wind Speed: <input required type="number" name="number" placeholder="enter wind speed" value="<%=windSpeed.number%>"/></label>
+                    <label>Precipitation: <input required type="text" name="number" placeholder="enter precipitation" value="<%=precipitation.number%>"/></label>
+                    <label>To go:
+                        <input
+                            type="checkbox"
+                            name="toGo"
+                            <%=weather.toGo ? "checked" : "" %>/>
+                    </label>
+                    <input type="submit" value="edit location"/>
+                </fieldset>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
