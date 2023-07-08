@@ -1,7 +1,7 @@
 const mongoose = require('./connection');
 
 // schema into model
-const outdoorActivityWeatherSchema = new mongoose.Schema({
+const weatherSchema = new mongoose.Schema({
     location: String,
     activity: String,
     temperature: Number,
@@ -10,6 +10,6 @@ const outdoorActivityWeatherSchema = new mongoose.Schema({
   });
 
 // weather model
-const OutdoorActivityWeather = mongoose.model('weather', outdoorActivityWeatherSchema);
+const Weather = mongoose.model('location', weatherSchema);
 
-module.exports = OutdoorActivityWeather; 
+module.exports = Weather; 

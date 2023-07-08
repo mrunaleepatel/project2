@@ -2,8 +2,8 @@
 
 require('dotenv').config();
 const express = require('express');
-const WeatherRouter = require('./controllers/weather');
-const UserRouter = require('./controllers/user');
+const LocationRouter = require('./controllers/location.js');
+const UserRouter = require('./controllers/user.js');
 const methodOverride = require('method-override');
 const app = express();
 const session = require('express-session');
@@ -20,7 +20,7 @@ app.use(session({
     resave: false
 }));
 
-app.use("/location", WeatherRouter);
+app.use("/location", LocationRouter);
 app.use("/user", UserRouter);
 
 
@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs');
     })
 
+
+const PORT = process.env.PORT;
 // listen
-const PORT = process.env.PORT || 4040;
 app.listen(PORT, () => {console.log(`listening on port ${PORT}`)})

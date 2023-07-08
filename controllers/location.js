@@ -1,5 +1,5 @@
 const express = require('express');
-const OutdoorActivityWeather = require('../models/weather');
+const Location = require('../models/location');
 
 const router = express.Router();
 
@@ -14,8 +14,8 @@ router.use((req, res, next) => {
 
 // controllers
 router.get('/', async (req, res) => {
-    const allOutdoorActivityWeather = await OutdoorActivityWeather.find({ username: req.session.username })
-    res.render('location/index.ejs', { weather: allOutdoorActivityWeather, user: req.session.username }
+    const allLocation = await Location.find({ username: req.session.username })
+    res.render('location/index.ejs', { location: allLocation, user: req.session.username }
     )
 })
 
