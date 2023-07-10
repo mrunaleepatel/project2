@@ -2,10 +2,10 @@
 
 require('dotenv').config();
 const express = require('express');
+const app = express();
 const WeatherRouter = require('./controllers/weather.js');
 const UserRouter = require('./controllers/user.js');
 const methodOverride = require('method-override');
-const app = express();
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 

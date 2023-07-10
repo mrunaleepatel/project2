@@ -15,10 +15,9 @@ const router = express.Router();
 // controllers
 
 router.get('/', async (req, res) => {
-    const allWeathers = await Weather.find({ username: req.session.username })
-    res.render('weather/index.ejs', { weathers: allWeathers, user: req.session.username }
-    )
-})
+    const allWeather = await Weather.find({ username: req.session.username })
+    res.render('weather/index.ejs', { weathers: allWeather, user: req.session.username });
+});
 
 // NEW
 router.get('/new', (req, res) => {
@@ -27,13 +26,21 @@ router.get('/new', (req, res) => {
 
 // DELETE
 router.delete('/:id', async (req, res) => {
-    await Weather.findByIdAndDelete(req.params.id)
+    const id = req.params.id.id;
+    await Weather.findByIdAndDelete(id)
     res.redirect('/weather')
+})
+
+// SHOW 
+router.get('/:id', async (req, res) => {
+    const id = req.params.id;
+    const weather = await Weather.findById(id);
+    res.render("weather/show.ejs", { weather })
 })
 
 // EDIT
 router.get('/:id/edit', async (req, res) => {
-    const weather = await Weather.findById(req.params.id)
+    const weather = await Weather.findById(id);
     res.render('weather/edit.ejs', { weather })
 })
 
