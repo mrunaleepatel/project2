@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OutdoorActivityWeather</title>
-</head>
+    <%- include('../partials/head.ejs') %>
 <body>
+    <%- include('../partials/header.ejs') %>
     <main>
         <div>
             <p><%= user%></p>
+            <a href="/user/logout"><button>Logout</button></a>
             <a href="/weather/new">Create New location</a>
             <% for (weather of weathers) { %>
                 <article>
-                    <a href="/weather/<%= location._id %>">
+                    <a href="/weather/<%= weather._id %>">
                         <h2>
-                            <%= location.name %>
+                            <%= weather.location %>
                         </h2>
                     </a>
                 </article>

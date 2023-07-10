@@ -11,6 +11,6 @@ const weatherSchema = new mongoose.Schema({
   });
 
 // weather model
-const Weather = mongoose.model('location', weatherSchema);
+const Weather = mongoose.model('weather', weatherSchema);
 
 module.exports = Weather; 

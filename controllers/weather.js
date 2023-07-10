@@ -26,15 +26,15 @@ router.get('/new', (req, res) => {
 })
 
 // DELETE
-router.delete('/weather/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     await Weather.findByIdAndDelete(req.params.id)
     res.redirect('/weather')
 })
 
 // EDIT
-router.get('/weather/:id/edit', async (req, res) => {
+router.get('/:id/edit', async (req, res) => {
     const weather = await Weather.findById(req.params.id)
-    res.render('edit.ejs', { weather })
+    res.render('weather/edit.ejs', { weather })
 })
 
 // UPDATE

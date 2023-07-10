@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OutdoorActivityWeather</title>
-</head>
+    <%- include('../partials/head.ejs') %>
 <body>
+    <%- include('../partials/header.ejs') %>
     <main>
         <div>
             <form method="post" action="/weather/<%=weather._id%>?_method=put">
@@ -16,7 +12,7 @@
                     <label>Activity: <input required type="text" name="name" placeholder="enter activity" value="<%=activity.name%>"/></label>
                     <label>Temperature: <input required type="number" name="number" placeholder="enter temperature" value="<%=temperature.number%>"/></label>
                     <label>Wind Speed: <input required type="number" name="number" placeholder="enter wind speed" value="<%=windSpeed.number%>"/></label>
-                    <label>Precipitation: <input required type="text" name="number" placeholder="enter precipitation" value="<%=precipitation.number%>"/></label>
+                    <label>Precipitation: <input required type="text" name="number" placeholder="enter precipitation" value="<%=precipitation.name%>"/></label>
                     <label>To go:
                         <input
                             type="checkbox"
