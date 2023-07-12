@@ -6,7 +6,7 @@
     <main>
         <div>
             <p>Welcome <%= user %>!</p>
-            <a href="/user/logout"><button>Logout</button></a>
+            
             <form action="/weather" method="post">
                 <fieldset>
                     <legend>Create a new location</legend>
@@ -17,6 +17,7 @@
                     <label>Precipitation: <input required type="text" name="precipitation" placeholder="enter precipitation"/></label><br>
                     <label>To go: <input type="checkbox" name="toGo"/></label><br>
                     <input type="submit" value="Create new location"/>
+                    <a href="/user/logout"><button>Logout</button></a>
                 </fieldset>
             </form>
         </div>

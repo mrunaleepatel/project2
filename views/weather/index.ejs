@@ -7,18 +7,18 @@
         <div>
             <p>Welcome <%= user %>!</p>
             <a href="/user/logout"><button>Logout</button></a>
-            <a href="/weather/new">Create Weather Infomation</a>
+            <a href="/weather/new"><button>Create Weather Infomation</button></a>
            
             <% for (weather of weathers) { %>
                 <article>
                   <a href="/weather/<%= weather._id %>">
-                    <h2><%= weather.location %></h2>
-                   
+                    <h2>
+                      <%= weather.location %>
+                    </h2>
                   </a>
                 </article>
               <% } %>
-              
-              
+             
         </div>
     </main>
 </body>
