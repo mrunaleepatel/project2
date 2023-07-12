@@ -7,7 +7,8 @@ const weatherSchema = new mongoose.Schema({
     temperature: Number,
     windSpeed: Number,
     precipitation: String,
-    toGo: Boolean
+    toGo: Boolean,
+    username: String
   });
 
 // weather model

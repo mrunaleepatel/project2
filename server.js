@@ -26,7 +26,7 @@ app.use("/user", UserRouter);
 
 app.get('/', (req, res) => {
     res.render('index.ejs');
-    })
+});
 
 
 const PORT = process.env.PORT;

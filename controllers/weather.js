@@ -14,55 +14,68 @@ const router = express.Router();
 
 // controllers
 
+// GET - List all locations 
 router.get('/', async (req, res) => {
-    const allWeather = await Weather.find({ username: req.session.username })
-    res.render('weather/index.ejs', { weathers: allWeather, user: req.session.username });
+  const allWeathers = await Weather.find({ username: req.session.username });
+  console.log(allWeathers)
+  res.render(
+    'weather/index.ejs', 
+    { weathers: allWeathers, user: req.session.username }
+  );
+  
 });
 
-// NEW
+// GET - Show new location form
 router.get('/new', (req, res) => {
-    res.render('weather/new.ejs')
-})
+  res.render('weather/new.ejs', { user: req.session.username });  
+});
 
-// DELETE
-router.delete('/:id', async (req, res) => {
-    const id = req.params.id.id;
-    await Weather.findByIdAndDelete(id)
-    res.redirect('/weather')
-})
-
-// SHOW 
-router.get('/:id', async (req, res) => {
-    const id = req.params.id;
-    const weather = await Weather.findById(id);
-    res.render("weather/show.ejs", { weather })
-})
-
-// EDIT
-router.get('/:id/edit', async (req, res) => {
-    const weather = await Weather.findById(id);
-    res.render('weather/edit.ejs', { weather })
-})
-
-// UPDATE
-router.put('/:id', async (req, res) => {
-    const id = req.params.id;
-    req.body.toGo = req.body.toGo === 'on' ? true : false;
-    await Weather.findByIdAndUpdate(id, req.body);
-    res.redirect('/weather')
-})
-
-// CREATE
+// POST - Create a new location 
 router.post('/', async (req, res) => {
     
-    if(req.body.toGo === 'on'){
-        req.body.toGo = true;
-    } else {
-        req.body.toGo = false;
-    }
-    req.body.username = req.session.username;
-    await Weather.create(req.body);
-    res.redirect('/weather');
-})
+      if(req.body.toGo === 'on'){
+          req.body.toGo = true;
+      } else {
+          req.body.toGo = false;
+      }
+      req.body.username = req.session.username;
+      const newWeather = req.body;
+      console.log(newWeather)
+      await Weather.create(newWeather);
+      res.redirect('/weather');
+  })
+
+// GET - Show one location
+router.get('/:id', async (req, res) => {
+  const id = req.params.id;
+  const weather = await Weather.findById(id);
+  res.render('weather/show.ejs', { weather });
+});
+
+// GET - Show edit form for one location
+router.get('/:id/edit', async (req, res) => {
+  const id = req.params.id;
+  const weather = await Weather.findById(id);
+  res.render('weather/edit.ejs', { weather });  
+});
+
+// PUT - Update a location 
+router.put('/:id', async (req, res) => {
+  const id = req.params.id;
+  req.body.toGo = req.body.toGo === 'on' ? true : false;
+  await Weather.findByIdAndUpdate(id, req.body);
+  res.redirect('/weather');  
+});
+
+// DELETE - Delete a location
+router.delete('/:id', async (req, res) => {
+  const id = req.params.id;
+  await Weather.findByIdAndDelete(id);
+  res.redirect('/weather')  
+});
 
 module.exports = router;
+
+
+
+

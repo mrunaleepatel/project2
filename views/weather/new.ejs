@@ -5,14 +5,16 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <div>
+            <p>Welcome <%= user %>!</p>
+            <a href="/user/logout"><button>Logout</button></a>
             <form action="/weather" method="post">
                 <fieldset>
                     <legend>Create a new location</legend>
-                    <label>Location: <input required type="text" name="name" placeholder="enter location"/></label>
-                    <label>Activity: <input required type="text" name="name" placeholder="enter activity"/></label>
-                    <label>Temperature: <input required type="number" name="number" placeholder="enter temperature"/></label>
-                    <label>Wind Speed: <input required type="number" name="number" placeholder="enter wind speed"/></label>
-                    <label>Precipitation: <input required type="text" name="name" placeholder="enter precipitation"/></label>
+                    <label>Location: <input required type="text" name="location" placeholder="enter location"/></label>
+                    <label>Activity: <input required type="text" name="activity" placeholder="enter activity"/></label>
+                    <label>Temperature: <input required type="number" name="temperature" placeholder="enter temperature"/></label>
+                    <label>Wind Speed: <input required type="number" name="windSpeed" placeholder="enter wind speed"/></label>
+                    <label>Precipitation: <input required type="text" name="precipitation" placeholder="enter precipitation"/></label>
                     <label>To go: <input type="checkbox" name="toGo"/></label>
                     <input type="submit" value="Create new location"/>
                 </fieldset>

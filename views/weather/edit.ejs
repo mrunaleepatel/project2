@@ -8,11 +8,11 @@
             <form method="post" action="/weather/<%=weather._id%>?_method=put">
                 <fieldset>
                     <legend>Create a new location</legend>
-                    <label>Location: <input required type="text" name="name" placeholder="enter location" value="<%=location.name%>"/></label>
-                    <label>Activity: <input required type="text" name="name" placeholder="enter activity" value="<%=activity.name%>"/></label>
-                    <label>Temperature: <input required type="number" name="number" placeholder="enter temperature" value="<%=temperature.number%>"/></label>
-                    <label>Wind Speed: <input required type="number" name="number" placeholder="enter wind speed" value="<%=windSpeed.number%>"/></label>
-                    <label>Precipitation: <input required type="text" name="number" placeholder="enter precipitation" value="<%=precipitation.name%>"/></label>
+                    <label>Location: <input required type="text" name="name" placeholder="enter location" value="<%=weather.location%>"/></label>
+                    <label>Activity: <input required type="text" name="name" placeholder="enter activity" value="<%=weather.activity%>"/></label>
+                    <label>Temperature: <input required type="number" name="number" placeholder="enter temperature" value="<%=weather.temperature%>"/></label>
+                    <label>Wind Speed: <input required type="number" name="number" placeholder="enter wind speed" value="<%=weather.windSpeed%>"/></label>
+                    <label>Precipitation: <input required type="text" name="number" placeholder="enter precipitation" value="<%=weather.precipitation%>"/></label>
                     <label>To go:
                         <input
                             type="checkbox"
