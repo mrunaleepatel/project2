@@ -9,15 +9,15 @@
             <a href="/user/logout"><button>Logout</button></a>
             <a href="/weather/new">Create Weather Infomation</a>
            
-                <% for (weather of weathers) { %>
-                    <article>
-                        <a href="/weather/<%= weather._id %>">
-                            <h2>
-                                <%= weather.location %> 
-                            </h2>
-                        </a>
-                    </article>
-                <% } %> 
+            <% for (weather of weathers) { %>
+                <article>
+                  <a href="/weather/<%= weather._id %>">
+                    <h2><%= weather.location %></h2>
+                   
+                  </a>
+                </article>
+              <% } %>
+              
               
         </div>
     </main>

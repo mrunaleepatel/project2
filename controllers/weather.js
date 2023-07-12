@@ -15,15 +15,21 @@ const router = express.Router();
 // controllers
 
 // GET - List all locations 
-router.get('/', async (req, res) => {
-  const allWeathers = await Weather.find({ username: req.session.username });
-  console.log(allWeathers)
-  res.render(
-    'weather/index.ejs', 
-    { weathers: allWeathers, user: req.session.username }
-  );
+// router.get('/', async (req, res) => {
+//   const allWeathers = await Weather.find({ username: req.session.username });
+//   console.log(allWeathers)
+//   res.render(
+//     'weather/index.ejs', 
+//     { weathers: allWeathers, user: req.session.username }
+//   );
   
+// });
+
+router.get('/', async (req, res) => {
+  const weatherData = await Weather.find({ username: req.session.username });
+  res.render('weather/index.ejs', { weathers: weatherData, user: req.session.username });
 });
+
 
 // GET - Show new location form
 router.get('/new', (req, res) => {
