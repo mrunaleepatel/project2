@@ -6,17 +6,17 @@
     <main>
         <div>
             <article>
-                <h2><%= weather.location%> - <%=weather.toGo ? "Yes" : "No" %></h2>
+                <h2><%= weather.location.toUpperCase()%></h2>
                 <h3><%= weather.activity%></h3>
                 <h3><%= weather.temperature%></h3>
                 <h3><%= weather.windSpeed%></h3>
                 <h3><%= weather.precipitation%></h3>
         
-                <a href="/weather/<%=weather._id %>/edit"><button class="edit-button">Edit</button></a>
+                <a href="/weather/<%=weather._id %>/edit"><button class="edit-button">Edit</button></a>  
                                 <form action="/weather/<%=weather._id %>?_method=DELETE" method="post">
                                     <input type="submit" value="Delete" class="delete-button"/>
                                     <a href="/weather"><button class="back-button">Back to main</button></a>
-                                </form> 
+                                </form>  
                 
             </article>
         </div>
