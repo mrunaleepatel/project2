@@ -26,6 +26,6 @@ User should be able to log in and get weather information specifically for outdo
 
 ## ERD (ENTITY RELATIONSHIP DIAGRAM)
 
-![PICTURE OF ERD](image.png)
+![PICTURE OF ERD]()![image](https://github.com/mrunaleepatel/project2/assets/130593688/a8249b56-66a2-4c44-b291-7dbbde7c952f)
 
 - [Free ERD Diagram Tool]()
