@@ -16,8 +16,7 @@ User should be able to log in and get weather information specifically for outdo
 ## MOCKUP OF UI 
 
 https://wireframepro.mockflow.com/view/MBDoNV9FJh
-<img width="1091" alt="wireframe1" src="https://github.com/mrunaleepatel/project2/assets/130593688/4df1ea64-af71-4bfc-8b58-3b432badea45">
-<img width="1084" alt="wireframe2" src="https://github.com/mrunaleepatel/project2/assets/130593688/e1befe6e-f561-4b7f-b5c2-083bba331b85">
+
 
 
 ## LIST OF BACKEND ENDPOINTS
