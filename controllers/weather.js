@@ -25,6 +25,7 @@ const router = express.Router();
   
 // });
 
+// GET - List the locations
 router.get('/', async (req, res) => {
   const weatherData = await Weather.find({ username: req.session.username });
   res.render('weather/index.ejs', { weathers: weatherData, user: req.session.username });
