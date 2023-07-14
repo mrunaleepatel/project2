@@ -5,8 +5,13 @@
 - [**Link to Github**](https://github.com/mrunaleepatel/project2.git) 
 - [**Link to deployed site**](https://project2-w4ca.onrender.com)
 - ## Technologies used 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,JavaScript,Express)](https://skillicons.dev)
-- * Mongoose
+* HTML
+* CSS
+* JavaScript
+* Node
+* Express
+* Mongoose
+
 - [**Link to trello**](https://trello.com/invite/b/P9hFu39O/ATTIa6432a50dcaed4a118a936cd3e3451298E675170/outdoor-weather-activity)
 
 ## DESCRIPTION
@@ -35,3 +40,6 @@ https://wireframepro.mockflow.com/view/MBDoNV9FJh
 
 ![image](https://github.com/mrunaleepatel/project2/assets/130593688/a8249b56-66a2-4c44-b291-7dbbde7c952f)
 
+## SCREENSHOT OF USER DEPLOYED SITE
+
+<img width="1508" alt="ScreenshotOfUserPage" src="https://github.com/mrunaleepatel/project2/assets/130593688/0f1c68cf-0556-4f86-bb45-288fc7dc1d4f">
