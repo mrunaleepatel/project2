@@ -3,15 +3,6 @@ const Weather = require('../models/weather');
 
 const router = express.Router();
 
-// middleware
-// router.use((req, res, next) => {
-//     if(req.session.logginIn) {
-//         next();
-//     } else {
-//         res.redirect('/user/login')
-//     }
-// })
-
 // controllers //
 
 // GET - List the locations
