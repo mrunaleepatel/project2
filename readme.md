@@ -16,7 +16,7 @@
 
 ## DESCRIPTION
 
-User should be able to log in and get weather information specifically for outdoor activities based on Location, activity, temperature, windSpeed and precipitation. They should be able to GET, POST, PUT, and DELETE the information. 
+The user should have the ability to log in and retrieve weather information tailored for outdoor activities, including details such as location, activity, temperature, wind speed, and precipitation. Additionally, they should be able to perform various operations such as create, edit, delete, and update to manage the information.
 
 ## MOCKUP OF UI 
 
